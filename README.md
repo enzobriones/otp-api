@@ -1,6 +1,6 @@
 # otp-api
 
-API de **Ordena tu Pyme**: flujo de caja y cuentas por pagar para pymes chilenas, multiempresa y opensource (MIT). NestJS 12 sobre Fastify, Drizzle + PostgreSQL 17, Zod, pnpm, Vitest y oxlint.
+API de **Ordena tu Pyme**: flujo de caja y cuentas por pagar para pymes chilenas, multiempresa y opensource (MIT). NestJS 12 sobre Fastify, Drizzle + PostgreSQL 18, Zod, pnpm, Vitest y oxlint.
 
 El frontend vive en [otp-frontend](https://github.com/enzobriones/otp-frontend).
 

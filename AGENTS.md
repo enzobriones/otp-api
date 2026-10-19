@@ -1,6 +1,6 @@
 # otp-api
 
-API of Ordena tu Pyme: cash flow and accounts payable for Chilean SMEs, multi-company SaaS. NestJS 12 on Fastify, Drizzle + PostgreSQL 17, Zod, pnpm, Vitest, oxlint.
+API of Ordena tu Pyme: cash flow and accounts payable for Chilean SMEs, multi-company SaaS. NestJS 12 on Fastify, Drizzle + PostgreSQL 18, Zod, pnpm, Vitest, oxlint.
 
 Domain, scope and decisions: [`docs/DESIGN.md`](docs/DESIGN.md) and the approved spec in [`docs/superpowers/specs/`](docs/superpowers/specs/). Deployment: [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
 
