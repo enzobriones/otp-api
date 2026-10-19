@@ -9,13 +9,19 @@ Flujo del repositorio: `feat/*` → PR a `develop` → CI → despliegue en `sta
 | `staging` | `develop` | `api`, `frontend`, `Postgres` | activo |
 | `production` | `main` | `api`, `frontend`, `Postgres` | apagado |
 
+| Entorno | API | Frontend |
+|---|---|---|
+| `staging` | <https://api-staging-5cbd.up.railway.app> (Swagger en `/docs`) | <https://frontend-staging-09ce.up.railway.app> |
+| `production` | <https://api-production-8c7ed.up.railway.app> | <https://frontend-production-5a77.up.railway.app> |
+
 La configuración vive en el dashboard de Railway, no en el repo. No hay `railway.json`.
+Cada entorno tiene su propio Postgres (PostgreSQL 18, imagen `postgres-ssl`) con credenciales distintas.
 
 ## CI en GitHub
 
 `.github/workflows/ci.yml` corre en cada PR y en cada push a `develop` y `main`: instalación con
 lockfile congelado, oxlint, `tsc`, Prettier, tests unitarios, migraciones y tests e2e contra un
-PostgreSQL 17 temporal (`otp_test`). No usa credenciales de Railway.
+PostgreSQL 18 temporal (`otp_test`). No usa credenciales de Railway.
 
 Las ramas tienen **Wait for CI** activo: Railway despliega solo si el workflow termina bien.
 
@@ -42,7 +48,7 @@ Railway asigna `PORT`. No uses `DATABASE_PUBLIC_URL` ni subas archivos `.env`.
 
 ## Servicio `Postgres`
 
-PostgreSQL con volumen persistente, uno por entorno. No cambies la versión mayor de una base ya
+PostgreSQL 18 con volumen persistente, uno por entorno. No cambies la versión mayor de una base ya
 inicializada.
 
 ## Servicio `frontend`
